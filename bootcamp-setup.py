@@ -11,7 +11,7 @@ issue_num = sys.argv[2]
 
 # Get Environment Variables
 github_token = os.environ.get("GITHUB_TOKEN")
-admin_token = "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"
+admin_token = os.environ.get("ADMIN_TOKEN")
 
 # Setup clients
 issue_ops_client = client.Client(github_token, working_repo, issue_num)
@@ -111,10 +111,10 @@ def provision_enironments(
                 org_name = org_name[0:38]
 
             org_id, org_name = admin_client.org.create(
-                
+                enterprise_id,
                 org_name,
                 facilitator_handles,
-                f"{config['billing-admin']}@spektrasystems.com",
+                f"{config['billing-admin']}@github.com",
             )
             attendee.update({"org_id": org_id, "org_name": org_name})
         except Exception:
@@ -158,7 +158,7 @@ def main():
 
     # Get enterprise id
     try:
-        enterprise_id = "E_kgDOAAH7KQ" #admin_client.enterprise.get_id(config["enterprise"])
+        enterprise_id = admin_client.enterprise.get_id(config["enterprise"])
     except Exception as e:
         issue_ops_client.issue.apply_label(config["labels"]["error"])
         issue_ops_client.issue.remove_label(config["labels"]["working"])
