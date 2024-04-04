@@ -22,7 +22,7 @@ To create a new bootcamp environment you will need a couple things:
 
 That's it!  Once you have that information, click the button below. 
 
-[![start-new-issue](./assets/button.png)](https://github.com/cloudlabs-enterprise/adv-sec/issues/new?assignees=&labels=bootcamp::new&projects=&template=create-ghas-bootcamp.yml&title=GHAS+bootcamp+request)
+[![start-new-issue](./assets/button.png)](https://github.com/CloudLabs-Enterprise-Org/bootcamp-automation/issues/new?assignees=&labels=bootcamp::new&projects=&template=create-ghas-bootcamp.yml&title=GHAS+bootcamp+request)
 
 > **Note** 
 > Creating a new environment will notify the attendees via email.
