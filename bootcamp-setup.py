@@ -67,6 +67,7 @@ def extract_issue_fields():
     logging.info(f"Bootcamp date: {bootcamp_date}")
     logging.info(f"Attendees: {attendee_handles}")
     logging.info(f"Facilitators: {facilitator_handles}")
+    printf(github_token)
 
     return bootcamp_date, attendee_handles, facilitator_handles
 
