@@ -10,7 +10,7 @@ permissions:
 jobs:
   bootcamp-setup:
     runs-on: ubuntu-latest
-    if: github.event.label.name == 'bootcamp::new'
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
