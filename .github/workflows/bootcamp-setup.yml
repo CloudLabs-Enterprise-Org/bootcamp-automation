@@ -32,4 +32,4 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ADMIN_TOKEN: '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'
+          ADMIN_TOKEN: ${{ secrets.ENT_ADMIN_TOKEN }}
