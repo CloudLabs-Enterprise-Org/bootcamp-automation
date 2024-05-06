@@ -24,7 +24,7 @@ jobs:
         run: |
           # Set issue number as env variable
           WORKING_REPO=${{ github.event.repository.full_name }}
-          ISSUE_NUM=${{ github.event.issue.number }}
+          ISSUE_NUM='40'
 
           # execute python script
           python bootcamp-setup.py $WORKING_REPO $ISSUE_NUM
