@@ -53,19 +53,7 @@ class Org:
             headers=self.client.headers,
             json={"query": graphql.create_org, "variables": variables},
         )
-        if response.status_code == 200 and "errors" not in response.json():
-            id = response.json()["data"]["createEnterpriseOrganization"][
-                "organization"
-            ]["id"]
-            name = response.json()["data"]["createEnterpriseOrganization"][
-                "organization"
-            ]["name"]
-            logging.info(f"Successfully created organization: {name}")
-            return id, name
-        else:
-            e = f"Error creating organization: {org_name} Response code: {response.status_code} Response: {response.json()}"
-            logging.error(e)
-            raise Exception(e)
+
 
     def invite_member(self, user_id, org_name):
         url = f"{self.client.base_url}/orgs/{org_name}/invitations"
