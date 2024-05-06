@@ -1,7 +1,6 @@
-name: GHAS Bootcamp Setup
-on:
-  issues:
-    types: [labeled]
+name: GHAS Bootcamp Setup2
+on: 
+  workflow_dispatch:
 
 permissions:
   issues: write
@@ -10,7 +9,7 @@ permissions:
 jobs:
   bootcamp-setup:
     runs-on: ubuntu-latest
-    
+    if: github.event.label.name == 'bootcamp::new'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,7 +24,7 @@ jobs:
         run: |
           # Set issue number as env variable
           WORKING_REPO=${{ github.event.repository.full_name }}
-          ISSUE_NUM='40'
+          ISSUE_NUM=${{ github.event.issue.number }}
 
           # execute python script
           python bootcamp-setup.py $WORKING_REPO $ISSUE_NUM
