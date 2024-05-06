@@ -1,7 +1,7 @@
 import requests
 import logging
 import gh.graphql as graphql
-
+import time
 
 class Repo:
     def __init__(self, client):
@@ -53,6 +53,9 @@ class Org:
             headers=self.client.headers,
             json={"query": graphql.create_org, "variables": variables},
         )
+        wait_time = 30
+        logging.info(f"Waiting {wait_time} seconds for orgs to be created")
+        time.sleep(wait_time)
 
 
     def invite_member(self, user_id, org_name):
