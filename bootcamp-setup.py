@@ -17,7 +17,7 @@ issue_num = sys.argv[2]
 
 github_token = os.environ.get("GITHUB_TOKEN")
 
-admin_token = os.environ.get("ENT_ADMIN_TOKEN")
+admin_token = os.environ.get("ADMIN_TOKEN")
 
 # Setup clients
 issue_ops_client = client.Client(github_token, working_repo, issue_num)
