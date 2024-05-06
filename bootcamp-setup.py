@@ -6,12 +6,18 @@ import yaml
 import time
 
 # Get Arguments
+
 working_repo = sys.argv[1]
+
 issue_num = sys.argv[2]
 
+
+
 # Get Environment Variables
+
 github_token = os.environ.get("GITHUB_TOKEN")
-admin_token = os.environ.get("ADMIN_TOKEN")
+
+admin_token = os.environ.get("ENT_ADMIN_TOKEN")
 
 # Setup clients
 issue_ops_client = client.Client(github_token, working_repo, issue_num)
@@ -67,7 +73,6 @@ def extract_issue_fields():
     logging.info(f"Bootcamp date: {bootcamp_date}")
     logging.info(f"Attendees: {attendee_handles}")
     logging.info(f"Facilitators: {facilitator_handles}")
-    printf(github_token)
 
     return bootcamp_date, attendee_handles, facilitator_handles
 
@@ -115,7 +120,7 @@ def provision_enironments(
                 enterprise_id,
                 org_name,
                 facilitator_handles,
-                f"{config['billing-admin']}@github.com",
+                f"{config['billing-admin']}@spektrasystems.com",
             )
             attendee.update({"org_id": org_id, "org_name": org_name})
         except Exception:
@@ -145,7 +150,7 @@ def main():
 
     # apply starting label
     issue_ops_client.issue.apply_label(config["labels"]["working"])
-    #issue_ops_client.issue.remove_label(config["labels"]["new"])
+    issue_ops_client.issue.remove_label(config["labels"]["new"])
 
     # Get info from issue
     try:
