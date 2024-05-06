@@ -145,7 +145,7 @@ def main():
 
     # apply starting label
     issue_ops_client.issue.apply_label(config["labels"]["working"])
-    issue_ops_client.issue.remove_label(config["labels"]["new"])
+    #issue_ops_client.issue.remove_label(config["labels"]["new"])
 
     # Get info from issue
     try:
