@@ -11,10 +11,10 @@ bootcamp-setup:
   # List of repos to fork into attendees orgs.  THESE HAVE TO BE PUBLIC
   repos-to-fork:
     - "ghas-bootcamp-resources/.github"
-    - "ghas-bootcamp-resources/ghas-bootcamp-WebGoat"
-    - "ghas-bootcamp-resources/ghas-bootcamp-java"
-    - "ghas-bootcamp-resources/ghas-bootcamp-python"
-    - "ghas-bootcamp-resources/ghas-bootcamp-javascript"
+    - "sumitmalik51/ghas-bootcamp-WebGoat"
+    - "sumitmalik51/ghas-bootcamp-java"
+    - "sumitmalik51/ghas-bootcamp-python"
+    - "sumitmalik51/ghas-bootcamp-javascript"
 bootcamp-teardown:
   # How long (in days) should the environtment be available for?
   duration: 14
