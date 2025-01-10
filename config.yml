@@ -15,6 +15,7 @@ bootcamp-setup:
     - "sumitmalik51/ghas-bootcamp-java"
     - "sumitmalik51/ghas-bootcamp-python"
     - "sumitmalik51/ghas-bootcamp-javascript"
+    - "sumitmalik51/juice-shop"
 bootcamp-teardown:
   # How long (in days) should the environtment be available for?
   duration: 14
